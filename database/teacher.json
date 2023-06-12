@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2dc02048-d5dc-49db-8671-23cf4b0ad97a",
+    "name": "John",
+    "image": "1a5b08a9-8057-40f6-a1d1-35ae3bbdb2e3.jpg",
+    "field": "Administration"
+  },
+  {
+    "id": "7355e867-3255-45f2-86e5-3ea2cb41c449",
+    "name": "Alice",
+    "image": "8c610b79-d91b-4eb2-952f-b7672a9a3d3f.jpg",
+    "field": "Operator"
+  },
+  {
+    "id": "3bb6248a-e239-4641-af89-45dfc15624df",
+    "name": "Steve",
+    "image": "7c18b998-a70e-40e7-9e09-9e8763cad60d.jpg",
+    "field": "Manager"
+  },
+  {
+    "id": "6381dee5-a5f1-4bac-b3f8-ccc789cb663c",
+    "name": "Joe Will",
+    "image": "8a8847dd-bd3a-41c9-97c3-b314f00ee746.jpg",
+    "field": "CEO"
+  }
+]

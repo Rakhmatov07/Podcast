@@ -1,0 +1,25 @@
+[
+  {
+    "id": "0e26feac-a9fe-475d-97ed-f34698a8279e",
+    "author": "William",
+    "description": "the trending podcast",
+    "image": "af5beda1-e7eb-4be5-8761-b094b43390f6.jpg",
+    "profileimg": "e93a8547-4d21-4e58-9755-9c148c40c951.jpg",
+    "listenned": "100k",
+    "likes": "2.5k",
+    "comments": "924k",
+    "createdAt": "2023-06-12T20:38:35.656Z"
+  },
+  {
+    "id": "9911c009-4318-48f1-9ef2-455d22fde447",
+    "author": "Taylor",
+    "field": "Creater",
+    "description": "the trending podcast",
+    "image": "2c1be139-b232-4531-96a3-77ce3979112b.jpg",
+    "profileimg": "1b38b0e8-57bc-4d15-acbf-a204532d44bf.jpg",
+    "listenned": "100k",
+    "likes": "3.2k",
+    "comments": "1M",
+    "createdAt": "2023-06-12T21:14:22.046Z"
+  }
+]

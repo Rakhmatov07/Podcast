@@ -1,0 +1,23 @@
+[
+  {
+    "id": "727ee6af-5af4-4479-8c2b-4fe72e667abd",
+    "name": "Productivity",
+    "episodes": "50",
+    "image": "943cc672-92c7-43f8-a486-c13d174aa1f0.jpg",
+    "createdAt": "2023-06-12T19:36:35.519Z"
+  },
+  {
+    "id": "2018a857-2b77-4533-93ed-d91910371324",
+    "name": "Meditation",
+    "episodes": "43",
+    "image": "557c579b-e663-431e-89fd-993ef64dbe4c.jpg",
+    "createdAt": "2023-06-12T20:23:34.306Z"
+  },
+  {
+    "id": "e1927c9a-c001-42e6-89ae-4c6feccef526",
+    "name": "Cooking",
+    "episodes": "76",
+    "image": "105f8aa8-d4de-4826-a86a-4b4d7cd44b33.jpg",
+    "createdAt": "2023-06-12T21:00:17.997Z"
+  }
+]
