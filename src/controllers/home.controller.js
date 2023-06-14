@@ -28,12 +28,34 @@ const listingPage = async (req, res) => {
 };
 
 const adminPage = async (req, res) => {
-  res.render("admin");
+  const teachers = await Teachers.read();
+  const latestEpisodes = await LatestEpisodes.read();
+  const trendingEpisodes = await TrendingEpisodes.read();
+  const topics = await Topics.read();
+
+
+  res.render("admin", {
+    teachers,
+    latestEpisodes,
+    trendingEpisodes,
+    topics
+  });
 };
+
+const addingPage = async(req, res) => {
+  res.render("add");
+};
+
+const deletingPage = async(req, res) => {
+  res.render("delete");
+};
+
 
 module.exports = {
   home,
   detailPage,
   adminPage,
   listingPage,
+  addingPage,
+  deletingPage
 };

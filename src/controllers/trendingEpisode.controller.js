@@ -3,7 +3,7 @@ const IO = require("../utils/io");
 const TrendingEpisodes = new IO("./database/trendingepisodes.json");
 const Episode = require("../models/episode");
 const path = require("path");
-const fs = require("fs");
+const fs = require("fs").promises;
 
 const getTrendingExpisodes = async(req, res) => {
     const data = await TrendingEpisodes.read();
@@ -24,13 +24,13 @@ const getSingleTrendingExpisode = async(req, res) => {
 const createTrendingEpisode = async(req, res) => {
         // Read elements and inputs
     const episodess = await TrendingEpisodes.read();
-    const { type, author, field, description, listenned, likes, comments } = req.body;
+    const { type, author, field, description } = req.body;
     const { image, profileimg } = req.files;
     const imageName = `${uuid()}${path.extname(image.name)}`;
     const profileimgName = `${uuid()}${path.extname(profileimg.name)}`;
     
     // Create new Episode
-    const newEpisode = (new Episode(type, author, field, description, imageName, profileimgName, listenned, likes, comments)).trending();
+    const newEpisode = (new Episode(type, author, field, description, imageName, profileimgName)).trending();
     const findEpisode = episodess.find(episode => episode.type === type && episode.author === author);
     if(findEpisode){
         return res.status(201).json({message: "Created"});
@@ -47,7 +47,7 @@ const createTrendingEpisode = async(req, res) => {
 const deleteTrendingExpisode = async(req, res) => {
         // Read elements
     const episodes = await TrendingEpisodes.read();
-    const { id } = req.params;
+    const { id } = req.body;
     const deletedEpisode = episodes.find(episode => episode.id === id);
     const findEpisodes = episodes.filter(episode => episode.id !== id);
     const filePath = `/uploads/${deletedEpisode.image}`;

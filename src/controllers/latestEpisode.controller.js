@@ -24,14 +24,15 @@ const getSingleLatestExpisode = async(req, res) => {
 const createLatestEpisode = async(req, res) => {
         // Read elements and inputs
     const episodess = await LatestEpisodes.read();
-    const { type, author, field, description, listenned, minutes, episodes, downloads, likes, comments } = req.body;
+    const { type, author, field, description, minutes, episodes } = req.body;
     const { image, profileimg } = req.files;
     const imageName = `${uuid()}${path.extname(image.name)}`;
     const profileimgName = `${uuid()}${path.extname(profileimg.name)}`;
     
         // Create new Episode
-    const newEpisode = (new Episode(type, author, field, description, imageName, profileimgName, listenned, likes, comments)).latest(minutes, episodes, downloads);
+    const newEpisode = (new Episode(type, author, field, description, imageName, profileimgName)).latest(minutes, episodes);
     const findEpisode = episodess.find((data) => data.type === type);
+    // console.log(findEpisode);
     if(findEpisode){
         return res.status(201).json({message: "Created"});
     }
@@ -46,7 +47,7 @@ const createLatestEpisode = async(req, res) => {
 const deleteLatestExpisode = async(req, res) => {
         // Read elements
     const episodes = await LatestEpisodes.read();
-    const { id } = req.params;
+    const { id } = req.body;
     const deletedEpisode = episodes.find(episode => episode.id === id);
     const findEpisodes = episodes.filter(episode => episode.id !== id);
     const filePath = `/uploads/${deletedEpisode.image}`;
@@ -66,7 +67,7 @@ const deleteLatestExpisode = async(req, res) => {
           }
     });
     await LatestEpisodes.write(findEpisodes);
-    res.status(200).json({message: "Success"});
+    res.redirect("/delete");
 }
 
 

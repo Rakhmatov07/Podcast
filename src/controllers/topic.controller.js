@@ -44,17 +44,18 @@ const createTopic = async(req, res) => {
 const deleteTopic = async(req, res) => {
         // Read elements
     const topics = await Topics.read();
-    const { id } = req.params;
+    const { id } = req.body;
     const deletedTopic = topics.find(topic => topic.id === id);
     const findTopics = topics.filter(topic => topic.id !== id);
-    const filePath = `/uploads/${deletedTopic.image}`;
-    fs.unlink(process.cwd() + filePath, (error) => {
-        if (error) {
-            console.error('Error deleting file:', error);
-          } else {
-            console.log('File deleted successfully');
-          }
-    });
+    console.log(deletedTopic);
+    // const filePath = `/uploads/${deletedTopic.image}`;
+    // fs.unlink(process.cwd() + filePath, (error) => {
+    //     if (error) {
+    //         console.error('Error deleting file:', error);
+    //       } else {
+    //         console.log('File deleted successfully');
+    //       }
+    // });
     await Topics.write(findTopics);
     res.status(200).json({message: "Success"});
 }

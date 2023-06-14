@@ -5,9 +5,9 @@ const router = Router();
 
 
 router.get("/topic", getTopics);
-router.get("/topic/:id", getSingleTopic);
+router.get("/topic/get", getSingleTopic);
 router.post("/topic", isAuth, createTopic);
 // router.put("/topic/:id", editTopic);
-router.delete("/topic/:id", isAuth, deleteTopic);
+router.post("/topic/delete", isAuth, deleteTopic);
 
 module.exports = router;

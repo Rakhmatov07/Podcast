@@ -22,5 +22,17 @@
     "name": "Joe Will",
     "image": "8a8847dd-bd3a-41c9-97c3-b314f00ee746.jpg",
     "field": "CEO"
+  },
+  {
+    "id": "8f0afde0-7195-45d6-987b-c18b596da7b6",
+    "name": "Matthew",
+    "image": "2cc73ff8-a159-4654-8502-75fad6a56cf4.jpg",
+    "field": "Dentist"
+  },
+  {
+    "id": "c7656826-13c2-4d6a-a208-a86acb8e674d",
+    "name": "Flora",
+    "image": "efcf9d8a-2196-4360-98d7-b36cdafe4e14.jpg",
+    "field": "Designer"
   }
 ]

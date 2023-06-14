@@ -1,7 +1,7 @@
 const {v4: uuid} = require("uuid");
 
 class Episode{
-    constructor(type, author, field, description, image, profileimg, listenned, likes, comments){
+    constructor(type, author, field, description, image, profileimg){
         this.id = uuid();
         this.type = type;
         this.author = author;
@@ -9,16 +9,16 @@ class Episode{
         this.description = description;
         this.image = image;
         this.profileimg = profileimg;
-        this.listenned = listenned;
-        this.likes = likes;
-        this.comments = comments;
+        this.listenned = 0;
+        this.likes = 0;
+        this.comments = 0;
         this.createdAt = new Date();
     }
 
-    latest (minutes, episodes, downloads) {
+    latest (minutes, episodes) {
         return {id: this.id, minutes, episodes, author: this.author, field: this.field, image: this.image,
            description: this.description, listenned: this.listenned, likes: this.likes, 
-           comments: this.comments, profileimg: this.profileimg, downloads, createdAt: this.createdAt};
+           comments: this.comments, profileimg: this.profileimg, downloads: 0, createdAt: this.createdAt};
     }
 
     trending () {
